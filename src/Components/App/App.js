@@ -10,7 +10,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Welcome to our Netshoes shop</h1>
           <p>
-            <Link className="App-link" to="/items">
+            <Link className="App-link" to="/store">
               Explore our items
             </Link>
           </p>

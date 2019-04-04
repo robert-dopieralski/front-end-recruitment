@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Table, Checkbox } from "semantic-ui-react";
 
+import "./Items.css";
+
 class Items extends Component {
   state = {
     products: []
@@ -31,8 +33,10 @@ class Items extends Component {
 
           <Table.Body>
             {products.length
-              ? products.map(prod => <Product item={prod} />)
-              : ""}
+              ? products.map((prod, index) => (
+                  <Product key={index} item={prod} />
+                ))
+              : "Sorry, we are out of stock"}
           </Table.Body>
         </Table>
       </div>
@@ -40,13 +44,15 @@ class Items extends Component {
   }
 }
 
-const Product = ({ item }) => (
+const Product = ({
+  item: { title, description, price, currencyFormat, isFreeShipping }
+}) => (
   <Table.Row>
-    <Table.Cell>{item.title}</Table.Cell>
-    <Table.Cell>{item.description}</Table.Cell>
-    <Table.Cell>{`${item.price} ${item.currencyFormat}`}</Table.Cell>
+    <Table.Cell>{title}</Table.Cell>
+    <Table.Cell>{description ? description : "No description"}</Table.Cell>
+    <Table.Cell>{`${price} ${currencyFormat}`}</Table.Cell>
     <Table.Cell>
-      <Checkbox disabled checked={item.isFreeShipping} />
+      <Checkbox disabled checked={isFreeShipping} />
     </Table.Cell>
   </Table.Row>
 );

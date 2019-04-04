@@ -10,7 +10,7 @@ const Root = () => (
     <Router>
       <MenuBar />
       <Route exact path="/" component={App} />
-      <Route path="/items" component={Items} />
+      <Route path="/store" component={Items} />
     </Router>
   </>
 );
