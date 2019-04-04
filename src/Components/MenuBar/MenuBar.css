@@ -1,0 +1,27 @@
+.nav-menu {
+  height: 80px;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.options-group {
+  height: 100%;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  height: 100%;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
