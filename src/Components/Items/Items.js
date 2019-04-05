@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Table, Checkbox } from "semantic-ui-react";
+
+import { Table } from "semantic-ui-react";
+
+import Product from "./Product";
 
 import "./Items.css";
 
@@ -43,18 +46,5 @@ class Items extends Component {
     );
   }
 }
-
-const Product = ({
-  item: { title, description, price, currencyFormat, isFreeShipping }
-}) => (
-  <Table.Row>
-    <Table.Cell>{title}</Table.Cell>
-    <Table.Cell>{description ? description : "No description"}</Table.Cell>
-    <Table.Cell>{`${price} ${currencyFormat}`}</Table.Cell>
-    <Table.Cell>
-      <Checkbox disabled checked={isFreeShipping} />
-    </Table.Cell>
-  </Table.Row>
-);
 
 export default Items;

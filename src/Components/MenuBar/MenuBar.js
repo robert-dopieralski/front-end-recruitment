@@ -15,7 +15,9 @@ const MenuBar = props => {
           <Link to="/store">Store</Link>
         </div>
       </div>
-      <div className="option"> Cart </div>
+      <div className="option">
+        <Link to="">Cart</Link>
+      </div>
     </div>
   );
 };
