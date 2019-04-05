@@ -16,4 +16,6 @@ const Root = () => (
   </>
 );
 
+//sample comment (github commit counter test)
+
 export default Root;
