@@ -1,3 +1,6 @@
 .products-list {
-  /* stuff */
+  margin-bottom: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }

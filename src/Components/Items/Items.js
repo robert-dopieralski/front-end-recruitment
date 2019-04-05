@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
-import { Table } from "semantic-ui-react";
-
-import Product from "./Product";
+import ItemsTable from "./ItemsTable";
 
 import "./Items.css";
+import { Loader } from "semantic-ui-react";
 
 class Items extends Component {
   state = {
@@ -24,24 +23,11 @@ class Items extends Component {
     const { products } = this.state;
     return (
       <div className="products-list">
-        <Table celled padded>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Product Name</Table.HeaderCell>
-              <Table.HeaderCell>Description</Table.HeaderCell>
-              <Table.HeaderCell>Price</Table.HeaderCell>
-              <Table.HeaderCell>Free Shipping</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-
-          <Table.Body>
-            {products.length
-              ? products.map((prod, index) => (
-                  <Product key={index} item={prod} />
-                ))
-              : "Sorry, we are out of stock"}
-          </Table.Body>
-        </Table>
+        {products.length ? (
+          <ItemsTable products={products} />
+        ) : (
+          <Loader active />
+        )}
       </div>
     );
   }
